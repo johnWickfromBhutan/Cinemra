@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+
+  --color-background: #0e0e11;
+  --color-surface: #0e0e11;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #131316;
+  --color-surface-container: #19191d;
+  --color-surface-container-high: #1e1e23;
+  --color-surface-container-highest: #25252a;
+  --color-surface-bright: #2c2c30;
+
+  --color-primary: #df8eff;
+  --color-primary-dim: #bb00fc;
+  --color-on-primary: #4f006d;
+  --color-primary-container: #d878ff;
+
+  --color-secondary: #00e3fd;
+  --color-secondary-container: #006875;
+  --color-on-secondary: #00363d;
+
+  --color-tertiary: #ff8d86;
+  
+  --color-on-surface: #f0edf1;
+  --color-on-surface-variant: #acaaae;
+  --color-outline-variant: #48474b;
+
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+.glass-nav {
+  @apply bg-surface-container-high/60 backdrop-blur-[20px];
+}
+
+.neon-glow-primary {
+  box-shadow: 0 0 20px rgba(223, 142, 255, 0.3);
+}
+
+.neon-glow-secondary {
+  box-shadow: 0 0 20px rgba(0, 227, 253, 0.4);
+}
+
+.ambient-shadow {
+  box-shadow: 0 20px 40px rgba(223, 142, 255, 0.08);
+}
+
+/* Custom scrollbar for a cleaner look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surface-container-highest rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
